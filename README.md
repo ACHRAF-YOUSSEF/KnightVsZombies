@@ -7,3 +7,7 @@
 # threading
 # os
 # random
+# pymediainfo
+# pip install pymediainfo
+# ffpyplayer
+# pip install ffpyplayer
