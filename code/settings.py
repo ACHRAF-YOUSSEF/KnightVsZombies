@@ -19,8 +19,8 @@ SCROLL_THRESH = 200
 ROWS = 16
 COLS = 150
 TILE_SIZE = HEIGHT // ROWS
-TILE_TYPES = int(len(os.listdir("../graphics/Characters/PNG/Tile")))
-MAX_LEVELS = int(len(os.listdir("../Levels"))) - 1
+TILE_TYPES = int(len(os.listdir("./graphics/Characters/PNG/Tile")))
+MAX_LEVELS = int(len(os.listdir("./Levels"))) - 1
 
 #create sprite groups
 enemy_group = pygame.sprite.Group()
@@ -42,18 +42,18 @@ IMAGES = {}
 
 # fx
 # Knights
-jump_fx = pygame.mixer.Sound('../audio/sfx/Knights/jump.wav')
-sword_fx = pygame.mixer.Sound('../audio/sfx/Knights/sword.mp3')
-AxeBattle_fx = pygame.mixer.Sound('../audio/sfx/Knights/AxeBattle.mp3')
-Spear_fx = pygame.mixer.Sound('../audio/sfx/Knights/Spear.mp3')
+jump_fx = pygame.mixer.Sound('./audio/sfx/Knights/jump.wav')
+sword_fx = pygame.mixer.Sound('./audio/sfx/Knights/sword.mp3')
+AxeBattle_fx = pygame.mixer.Sound('./audio/sfx/Knights/AxeBattle.mp3')
+Spear_fx = pygame.mixer.Sound('./audio/sfx/Knights/Spear.mp3')
 
 # Zombies
-Zombie_Biting_A1_fx = pygame.mixer.Sound('../audio/sfx/Zombies/Zombie-Biting-A1.mp3')
-Zombie_Breathing_H1_fx = pygame.mixer.Sound('../audio/sfx/Zombies/Zombie-Breathing-H1.mp3')
-Zombie_Breathing_Short_A3_fx = pygame.mixer.Sound('../audio/sfx/Zombies/Zombie-Breathing-Short-A3.mp3')
-Zombie_Dying_and_Choking_A1_fx = pygame.mixer.Sound('../audio/sfx/Zombies/Zombie-Dying-and-Choking-A1.mp3')
-Zombie_Growl_A7_fx = pygame.mixer.Sound('../audio/sfx/Zombies/Zombie-Growl-A7.mp3')
-Zombie_Short_Attack_A1_fx = pygame.mixer.Sound('../audio/sfx/Zombies/Zombie-Short-Attack-A1.mp3')
+Zombie_Biting_A1_fx = pygame.mixer.Sound('./audio/sfx/Zombies/Zombie-Biting-A1.mp3')
+Zombie_Breathing_H1_fx = pygame.mixer.Sound('./audio/sfx/Zombies/Zombie-Breathing-H1.mp3')
+Zombie_Breathing_Short_A3_fx = pygame.mixer.Sound('./audio/sfx/Zombies/Zombie-Breathing-Short-A3.mp3')
+Zombie_Dying_and_Choking_A1_fx = pygame.mixer.Sound('./audio/sfx/Zombies/Zombie-Dying-and-Choking-A1.mp3')
+Zombie_Growl_A7_fx = pygame.mixer.Sound('./audio/sfx/Zombies/Zombie-Growl-A7.mp3')
+Zombie_Short_Attack_A1_fx = pygame.mixer.Sound('./audio/sfx/Zombies/Zombie-Short-Attack-A1.mp3')
 
 # set volume
 jump_fx.set_volume(1)
