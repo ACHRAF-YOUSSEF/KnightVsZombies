@@ -114,7 +114,7 @@ class HealthBar():
         pygame.draw.rect(screen, BLACK, (self.x - 2, self.y - 2, 154, 24))
         pygame.draw.rect(screen, RED, (self.x, self.y, 150, 20))
         pygame.draw.rect(screen, GREEN, (self.x, self.y, 150 * ratio, 20))
-        img = pygame.image.load(f"../graphics/Characters/PNG/KNIGHTS/3/Head/{Knight.character_num}.png")
+        img = pygame.image.load(f"./graphics/Characters/PNG/KNIGHTS/3/Head/{Knight.character_num}.png")
         img = pygame.transform.scale(img,(int(img.get_width() * 0.12),int(img.get_height()) * 0.12))
         img_rect = img.get_rect()
         img_rect.center = (45,45)
@@ -209,9 +209,9 @@ class Character(pygame.sprite.Sprite):
             animation_list = []
             for animation in animation_types:
                 temp_list = []
-                num_of_frames = len(os.listdir(f"../graphics/Characters/PNG/{self.character_type}/{j}/{animation}"))
+                num_of_frames = len(os.listdir(f"./graphics/Characters/PNG/{self.character_type}/{j}/{animation}"))
                 for i in range(num_of_frames):
-                    img = pygame.image.load(f"../graphics/Characters/PNG/{self.character_type}/{j}/{animation}/{i}.png").convert_alpha()
+                    img = pygame.image.load(f"./graphics/Characters/PNG/{self.character_type}/{j}/{animation}/{i}.png").convert_alpha()
                     img = pygame.transform.scale(img,(int(img.get_width() * self.scale),int(img.get_height()) * self.scale))
                     temp_list.append(img)
                 animation_list.append(temp_list)
@@ -463,9 +463,9 @@ class GameState:
         
         self.caption = self.current_state
         
-        self.musicListNames = os.listdir("../audio/8bit-music")
+        self.musicListNames = os.listdir("./audio/8bit-music")
         self.musicListLength = int(len(self.musicListNames))
-        self.musicList = [f"../audio/8bit-music/{song}" for song in self.musicListNames]
+        self.musicList = [f"./audio/8bit-music/{song}" for song in self.musicListNames]
         self.music_index = randint(0, self.musicListLength - 1)
         self.musicIsPlaying = False
         
@@ -479,16 +479,16 @@ class GameState:
         self.zombies_nb = 0
         
         #pick up boxes
-        self.health_box_img = pygame.image.load('../graphics/Characters/PNG/Health/health_box.png')
+        self.health_box_img = pygame.image.load('./graphics/Characters/PNG/Health/health_box.png')
 
         self.item_boxes = {
             'Health': self.health_box_img
         }
         
         # character changer images
-        img_1 = pygame.image.load("../graphics/Characters/PNG/KNIGHTS/1/Idle/0.png")
-        img_2 = pygame.image.load("../graphics/Characters/PNG/KNIGHTS/2/Idle/0.png")
-        img_3 = pygame.image.load("../graphics/Characters/PNG/KNIGHTS/3/Idle/0.png")
+        img_1 = pygame.image.load("./graphics/Characters/PNG/KNIGHTS/1/Idle/0.png")
+        img_2 = pygame.image.load("./graphics/Characters/PNG/KNIGHTS/2/Idle/0.png")
+        img_3 = pygame.image.load("./graphics/Characters/PNG/KNIGHTS/3/Idle/0.png")
 
         img_1 = pygame.transform.scale(img_1, (int(img_1.get_width() * 0.2), int(img_1.get_height()) * 0.2))
         img_2 = pygame.transform.scale(img_2, (int(img_2.get_width() * 0.2), int(img_2.get_height()) * 0.2))
@@ -725,7 +725,7 @@ class Menu:
                     world_data = reset_level()
                     if gs.level <= MAX_LEVELS:
                         #load in level data and create world
-                        with open(f'../Levels/level{gs.level}_data.csv', newline='') as csvfile:
+                        with open(f'./Levels/level{gs.level}_data.csv', newline='') as csvfile:
                             reader = csv.reader(csvfile, delimiter=',')
                             for x, row in enumerate(reader):
                                 for y, tile in enumerate(row):
