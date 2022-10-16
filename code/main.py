@@ -12,17 +12,17 @@ def thread_1():
     global Knight, health_bar, world, bg, img_list, finished
     
     #load images
-    pine1_img = pygame.image.load('../graphics/Characters/PNG/Background/pine1.png').convert_alpha()
-    pine2_img = pygame.image.load('../graphics/Characters/PNG/Background/pine2.png').convert_alpha()
-    mountain_img = pygame.image.load('../graphics/Characters/PNG/Background/mountain.png').convert_alpha()
-    sky_img = pygame.image.load('../graphics/Characters/PNG/Background/sky_cloud.png').convert_alpha()
+    pine1_img = pygame.image.load('./graphics/Characters/PNG/Background/pine1.png').convert_alpha()
+    pine2_img = pygame.image.load('./graphics/Characters/PNG/Background/pine2.png').convert_alpha()
+    mountain_img = pygame.image.load('./graphics/Characters/PNG/Background/mountain.png').convert_alpha()
+    sky_img = pygame.image.load('./graphics/Characters/PNG/Background/sky_cloud.png').convert_alpha()
     
     bg = [sky_img, mountain_img, pine1_img, pine2_img]
 
     #store tiles in a list
     img_list = []
     for x in range(TILE_TYPES):
-        img = pygame.image.load(f'../graphics/Characters/PNG/Tile/{x}.png')
+        img = pygame.image.load(f'./graphics/Characters/PNG/Tile/{x}.png')
         img = pygame.transform.scale(img, (TILE_SIZE, TILE_SIZE))
         img_list.append(img)
         
@@ -33,7 +33,7 @@ def thread_1():
         world_data.append(r)
     
     #load in level data and create world
-    with open(f'../Levels/level{gs.level}_data.csv', newline='') as csvfile:
+    with open(f'./Levels/level{gs.level}_data.csv', newline='') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
         for x, row in enumerate(reader):
             for y, tile in enumerate(row):
@@ -147,7 +147,7 @@ if __name__ == "__main__":
     pygame.init()  
     
     # icon
-    icon = pygame.transform.scale(pygame.image.load("../graphics/icon/3.png"), (512, 512))
+    icon = pygame.transform.scale(pygame.image.load("./graphics/icon/3.png"), (512, 512))
     pygame.display.set_icon(icon)
     
     # play menu buttons
